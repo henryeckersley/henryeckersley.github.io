@@ -1,0 +1,26 @@
+{
+  "name": "henryeckersley.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss src/css/styles.css -o dist/assets/styles.css",
+    "build:js": "esbuild src/js/main.js --bundle --outfile=dist/assets/main.js --minify",
+    "build:images": "imagemin src/assets/images/* --out-dir=dist/assets/images || true",
+    "build": "eleventy && npm run build:css && npm run build:js && npm run build:images",
+    "dev": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.1",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
+    "esbuild": "^0.25.5",
+    "imagemin-cli": "^8.0.0",
+    "postcss": "^8.5.4",
+    "postcss-cli": "^11.0.1"
+  }
+}

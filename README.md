@@ -6,6 +6,7 @@ Asset bundling is handled with PostCSS, esbuild, and imagemin.
 ## Prerequisites
 - Node.js 18+ (already available in this environment)
 
+
 Install dependencies:
 
 ```bash

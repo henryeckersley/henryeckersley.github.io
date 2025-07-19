@@ -54,6 +54,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Dark mode toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    if (themeToggle) themeToggle.checked = true;
+  }
+  if (themeToggle) {
+    themeToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  }
+
+  // Portfolio filtering
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  if (filterButtons.length) {
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-category');
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        portfolioItems.forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+            gsap.fromTo(item, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   // Tab functionality for resume
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
@@ -75,12 +110,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', e => {
       e.preventDefault();
+      const formData = new FormData(contactForm);
       gsap.to(contactForm, { opacity: 0.5, duration: 0.5, y: -10 });
-      setTimeout(() => {
+      fetch('https://example.com/api/contact', {
+        method: 'POST',
+        body: formData
+      }).then(() => {
         alert('Your message has been sent!');
         gsap.to(contactForm, { opacity: 1, duration: 0.5, y: 0 });
         contactForm.reset();
-      }, 1000);
+      }).catch(() => {
+        alert('There was a problem sending your message.');
+        gsap.to(contactForm, { opacity: 1, duration: 0.5, y: 0 });
+      });
     });
   }
 

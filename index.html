@@ -20,12 +20,17 @@
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="menu-toggle" role="button" aria-label="Toggle Navigation">
       <span></span><span></span><span></span>
     </div>
+    <label class="theme-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <span>Dark</span>
+    </label>
   </nav>
   <header id="home" class="hero" style="background-image: url('https://thesoutherneronline.com/wp-content/uploads/2024/08/DSC_0242-1200x801.jpg');">
     <div class="hero-overlay"></div>
@@ -43,7 +48,7 @@
         </div>
         <div class="about-text">
           <h3>About Me</h3>
-          <p>I'm Henry Eckersley, a high school student-athlete with a passion for computer science, sports, politics and physiology. I love creating engaging websites and exploring new technologies.</p>
+          <p>I'm Henry Eckersley, a student-athlete from Atlanta with a love of coding and endurance sports. When I'm not training or writing articles for the school paper, I'm experimenting with web technologies and building projects that promote wellness and community.</p>
         </div>
       </div>
     </div>
@@ -52,22 +57,28 @@
     <div class="container">
       <h2>Projects</h2>
       <p>Some of the things I've been working on recently.</p>
+      <div class="filter-buttons">
+        <span class="filter-button active" data-category="all">All</span>
+        <span class="filter-button" data-category="web">Web</span>
+        <span class="filter-button" data-category="design">Design</span>
+        <span class="filter-button" data-category="other">Other</span>
+      </div>
       <div class="portfolio-grid">
-        <div class="portfolio-item">
+        <div class="portfolio-item" data-category="web">
           <img src="https://via.placeholder.com/400x250" alt="Project 1" />
           <div class="portfolio-overlay">
             <h3>Project One</h3>
             <p>Interactive Hangman game built with JavaScript.</p>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item" data-category="design">
           <img src="https://via.placeholder.com/400x250" alt="Project 2" />
           <div class="portfolio-overlay">
             <h3>Project Two</h3>
             <p>Motion graphics experiment using GSAP and Three.js.</p>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item" data-category="other">
           <img src="https://via.placeholder.com/400x250" alt="Project 3" />
           <div class="portfolio-overlay">
             <h3>Project Three</h3>

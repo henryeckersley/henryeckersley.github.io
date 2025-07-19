@@ -1,11 +1,11 @@
 # henryeckersley.github.io
 
-This repository hosts the source for Henry Eckersley's personal website. The site now includes multiple pages highlighting Henry's vision, portfolio, resume and a contact form.
+This repository hosts the source for Henry Eckersley's personal website and portfolio. The site now contains several pages showcasing Henry's projects, a vision statement, blog posts, a downloadable resume and a contact form. A dark mode option and project filtering add a touch of interactivity.
 
 ## Viewing locally
 
-Open `index.html` or any of the other HTML files in your browser. All styles are located in `css/style.css` and interactive behaviour is handled in `js/script.js`.
+Clone the repo and open `index.html` or any of the other HTML files in your browser. All styles are located in `css/style.css` and interactive behaviour is handled in `js/script.js`. No build step is required.
 
 ## Disclaimer
 
-This website was generated with help from an AI assistant using OpenAI's ChatGPT and content publicly available from Henry's previous site. Please verify any details before reuse.
+This website was generated with help from an AI assistant using OpenAI's ChatGPT. Please verify any personal details before reuse.

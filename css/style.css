@@ -330,3 +330,93 @@ html, body {
   .about-content { flex-direction: column; }
   .about-img img { margin-right: 0; margin-bottom: 20px; }
 }
+
+/* Blog Styles */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.blog-post {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.blog-post h3 {
+  margin-top: 0;
+}
+.blog-post .date {
+  font-size: 14px;
+  color: #888;
+}
+.blog-post .read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+body.dark .main-nav {
+  background-color: #1f1f1f;
+}
+body.dark .nav-links a {
+  color: #e0e0e0;
+}
+body.dark .nav-links a.active,
+body.dark .nav-links a:hover {
+  background-color: #333;
+}
+body.dark .hero-overlay {
+  background: rgba(0,0,0,0.6);
+}
+body.dark .section {
+  background-color: #1a1a1a;
+}
+body.dark .portfolio-overlay {
+  background: rgba(240, 196, 32, 0.8);
+}
+body.dark #contact-form {
+  background-color: #242424;
+}
+body.dark .main-footer {
+  background-color: #000;
+}
+
+/* Portfolio Filter Buttons */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.filter-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  border: 1px solid #007BFF;
+  cursor: pointer;
+  border-radius: 30px;
+  background: #fff;
+  transition: background 0.3s ease;
+}
+.filter-button.active,
+.filter-button:hover {
+  background: #007BFF;
+  color: #fff;
+}
+
+/* Theme Switch */
+.theme-switch {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.theme-switch input {
+  margin-right: 8px;
+}

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Henry Eckersley - Vision</title>
+  <title>Henry Eckersley - Blog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -15,32 +15,47 @@
     <div class="logo">Henry Eckersley</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="vision.html" class="active">Vision</a></li>
+      <li><a href="vision.html">Vision</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="resume.html">Resume</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="menu-toggle" role="button" aria-label="Toggle Navigation">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="menu-toggle" role="button" aria-label="Toggle Navigation"><span></span><span></span><span></span></div>
     <label class="theme-switch">
-      <input type="checkbox" id="theme-toggle" />
+      <input type="checkbox" id="theme-toggle">
       <span>Dark</span>
     </label>
   </nav>
-  <header class="hero" style="background-image: url('https://thesoutherneronline.com/wp-content/uploads/2024/08/DSC_0242-1200x801.jpg');">
+  <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>My Vision</h1>
-      <h2>What drives my passion</h2>
+      <h1>Blog</h1>
+      <h2>Thoughts and updates</h2>
     </div>
   </header>
   <section class="section">
     <div class="container">
-      <h2>Inspiration</h2>
-      <p>As a student-athlete at Grady High School, my vision is to merge the worlds of sports, technology, and community service. I'm fascinated by how programming can empower individuals, whether through data analytics in sports or building accessible tools for mental health advocacy.</p>
-      <p>I aim to continue my studies in computer science and physiology, exploring how software can enhance athletic training and recovery. My goal is to create inclusive tech-driven solutions that benefit both athletes and everyday people.</p>
+      <div class="blog-grid">
+        <article class="blog-post">
+          <h3>Balancing Athletics and Coding</h3>
+          <p class="date">March 2025</p>
+          <p>Exploring how running cross country influences my approach to problem solving and project management.</p>
+          <a href="#" class="read-more">Read more</a>
+        </article>
+        <article class="blog-post">
+          <h3>Lessons from Building My First App</h3>
+          <p class="date">February 2025</p>
+          <p>A behind-the-scenes look at a workout tracker I created using JavaScript and Firebase.</p>
+          <a href="#" class="read-more">Read more</a>
+        </article>
+        <article class="blog-post">
+          <h3>Why Mental Health Matters to Me</h3>
+          <p class="date">January 2025</p>
+          <p>My volunteer work in mental health first aid and how it shapes the projects I pursue.</p>
+          <a href="#" class="read-more">Read more</a>
+        </article>
+      </div>
     </div>
   </section>
   <footer class="main-footer">

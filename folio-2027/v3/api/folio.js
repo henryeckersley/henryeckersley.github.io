@@ -1,0 +1,7 @@
+import {account,body,error,output,register,requireAccount,getWorkspace,saveWorkspace,vapid,syncPush,disablePush,testPush,ai} from '../lib/folio.mjs';
+export const config={maxDuration:60};
+export default async function handler(req,res){try{const action=String(req.query.action||'');if(req.method==='GET'&&action==='health')return output(res,200,{ok:true,release:'3.0',storageConfigured:!!(process.env.BLOB_READ_WRITE_TOKEN||process.env.BLOB_STORE_ID),pushConfigured:!!process.env.CRON_SECRET,aiConfigured:!!(process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN),model:'reflection/beam-free'});
+ if(req.method!=='POST')return output(res,405,{error:'POST required.'});
+ const id=account(req),b=body(req);if(action==='register'){await register(id);return output(res,200,{account:true})}await requireAccount(id);let result;
+ switch(action){case'workspace':result=await getWorkspace(id);break;case'save':result=await saveWorkspace(id,b);break;case'push-key':result={publicKey:vapid().publicKey};break;case'push-sync':result=await syncPush(id,b);break;case'push-disable':result=await disablePush(id,b);break;case'push-test':result=await testPush(id,b);break;case'ai':result=await ai(id,b);break;default:return output(res,404,{error:'Unknown action.'})}return output(res,200,result)
+ }catch(e){return error(res,e)}}

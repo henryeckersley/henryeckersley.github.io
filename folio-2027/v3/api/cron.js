@@ -1,0 +1,3 @@
+import {cron,output,error} from '../lib/folio.mjs';import crypto from 'node:crypto';
+export const config={maxDuration:60};
+export default async function handler(req,res){try{const expected=process.env.CRON_SECRET?'Bearer '+process.env.CRON_SECRET:'',given=String(req.headers.authorization||'');if(req.method!=='GET'||!expected||given.length!==expected.length||!crypto.timingSafeEqual(Buffer.from(given),Buffer.from(expected)))return output(res,401,{error:'Unauthorized'});return output(res,200,await cron())}catch(e){return error(res,e)}}
